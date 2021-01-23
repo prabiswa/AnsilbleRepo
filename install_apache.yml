@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: un-install apache2 package
+    apt: 
+       name: apache2
+       state: absent 
+  - name: update repository
+    apt:
+       update_cache: yes
